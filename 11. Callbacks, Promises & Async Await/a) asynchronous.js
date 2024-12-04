@@ -9,7 +9,7 @@ ASYNCHRONOUS -
 - Some important instructions get blocked due to some previous instructions that take time to complete
 - In this case, async code execution allows to execute nect instructions immediately and
 - doesn't block the flow.
-
+*/
 
 
 function hello(){
@@ -24,7 +24,7 @@ setTimeout(() => {
 
 console.log("!");               // executed immediately
 
-*/
+
 
 /*
 
@@ -43,3 +43,17 @@ function calculator(a, b, sumCallback){
 }
 
 calculator(2, 3, sum);          // 5
+
+
+/* sum - here is called callback function or simply callback
+        NEVER pass the callback with ().
+*/
+
+
+
+// Another way of writing the same thing -
+
+calculator(2, 3, (a, b) => {
+    console.log(a+b);               // 5
+});
+
